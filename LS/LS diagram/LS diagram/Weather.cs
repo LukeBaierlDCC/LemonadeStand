@@ -11,12 +11,28 @@ namespace LS_diagram
         private int RainyDay;
         private int CloudyDay;
 
-        public CustomerType CustomerType
+        public void GetForecast()
         {
-            get => default(CustomerType);
-            set
+            int caseSwitch = 1;
+
+            switch (caseSwitch)
             {
+                case 1:
+                    Console.WriteLine("");
+                    break;
+                case 2:
+                    Console.WriteLine("");
+                    break;
+                case 3:
+                    Console.WriteLine("");
+                    break;
             }
         }
+
+        public void GetActualWeather()
+        {
+            
+        }
+
     }
 }

@@ -20,22 +20,7 @@ namespace LS_diagram
             }
         }
 
-        public void GetSugar()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void GetIce()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void GetLemons()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void GetCups()
+        public void SetRecipe()
         {
             throw new System.NotImplementedException();
         }

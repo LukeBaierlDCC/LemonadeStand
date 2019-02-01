@@ -5,14 +5,26 @@ using System.Text;
 
 namespace LS_diagram
 {
-    public class Game : Day
+    public class Game
     {
-        public Player Player
+        public Day day;
+
+        public Player player;
+
+        public StoreClass store;
+
+        public Rules rules;
+
+        public Game()
         {
-            get => default(Player);
-            set
-            {
-            }
+            day = new Day();
+
+            player = new Player();
+
+            store = new StoreClass();
+
+            rules = new Rules();
         }
+   
     }
 }

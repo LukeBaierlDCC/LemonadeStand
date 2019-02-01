@@ -14,5 +14,13 @@ namespace LS_diagram
             {
             }
         }
+
+        public CustomerType CustomerType
+        {
+            get => default(CustomerType);
+            set
+            {
+            }
+        }
     }
 }

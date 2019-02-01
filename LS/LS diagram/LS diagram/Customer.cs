@@ -7,5 +7,6 @@ namespace LS_diagram
 {
     public class CustomerType
     {
+
     }
 }
