@@ -13,7 +13,8 @@ namespace LS_diagram
 
         public void GetForecast()
         {
-            int caseSwitch = 1;
+            Random rnd = new Random();
+            int caseSwitch = rnd.Next(1,4);
 
             switch (caseSwitch)
             {
@@ -31,7 +32,7 @@ namespace LS_diagram
 
         public void GetActualWeather()
         {
-            
+            int caseSwitch = 
         }
 
     }
