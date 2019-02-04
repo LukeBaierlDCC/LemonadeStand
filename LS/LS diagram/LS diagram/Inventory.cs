@@ -7,5 +7,14 @@ namespace LS_diagram
 {
     public class Inventory
     {
+        public double cups;
+        public double lemons;
+        public double sugar;
+        public double ice;
+
+        public Inventory()
+        {
+
+        }
     }
 }

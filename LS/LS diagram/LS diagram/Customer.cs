@@ -14,7 +14,7 @@ namespace LS_diagram
             ActualTemperatureInfluence(actualTemperature);
             WeatherConditionInfluence(weatherCondition);
             PriceInfluence(player.Recipe.price);
-            //RecipeInfluence(lemonadeStand);
+            RecipeInfluence(lemonadeStand);
             DoesBuy(day, num);
         }
 
