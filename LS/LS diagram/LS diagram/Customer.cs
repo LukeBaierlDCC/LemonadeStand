@@ -7,70 +7,48 @@ namespace LS_diagram
 {
     public class CustomerType
     {
-        public void Customer()
+        double chanceToBuy;
+        public void Customer(double actualTemperature, string weatherCondition, Day day, Random num, Player player)
         {
-            public void Decide(Weather weather, Player player)
+            chanceToBuy = 10;
+            ActualTemperatureInfluence(actualTemperature);
+            WeatherConditionInfluence(weatherCondition);
+            PriceInfluence(player.Recipe.price);
+            //RecipeInfluence(lemonadeStand);
+            DoesBuy(day, num);
+        }
+
+        public void ActualTemperatureInfluence(double temperature)
+        {
+            if (temperature>=75)
             {
-                Random rnd = new Random();
-                int chance = rnd.Next(1, 6);
-                if(chance == 1)
-                {
-                    PriceFactor(player);
-                }
-                else if (chance == 2)
-                {
-                    WeatherFactor(weather, player);
-                }
-                else if (chance == 3)
-                {
-                    RecipeFactor(player);
-                }
-                else
-                {
-                    Purchase(player);
-                }
+                chanceToBuy += temperature - 77;
             }
-            public void Purchase(Player player)
+            else
             {
-                player.Pitcher.cups -= 1;
-                player.Wallet += player.Recipe.pricePerCup;
+                chanceToBuy = (75 - temperature) / 2;
             }
-            public void PriceFactor(Player player)
+
+        }
+        public void WeatherConditionInfluence(string weather)
+        {
+            switch(weather)
             {
-                if(player.Recipe.pricePerCup > 1)
-                {
-                    Random rnd = new Random();
-                    int chance = rnd.Next(1, 100);
-                    if(chance > 90)
-                    {
-                        Purchase(player);
-                    }
-                }
-            }
-            public void WeatherFactor(Weather weather, Player player)
-            {
-            if (weather.realTemp < && weather.skyType == "cloudy" || weather.skyType == "rainy")
-                {
-                    Random rnd = new Random();
-                    int chance = rnd.Next(1, 100);
-                    if (chance > 50)
-                    {
-                        Purchase(player);
-                    }
-                }
-            }
-            public void RecipeFactor(Player player)
-            {
-                if (2 > player.Recipe.numLemon || player.Recipe.numLemon > 8 || player.Recipe.cupsOfSugar < 2)
-                {
-                    Random rnd = new Random();
-                    int chance = rnd.Next(1, 100);
-                    if (chance > 50)
-                    {
-                        Purchase(player);
-                    }
-                }
+                case "sunny":
+                    chanceToBuy += 7;
+                    break;
+                case "cloudy":
+                    chanceToBuy += 3;
+                    break;
+                case "rainy":
+                    chanceToBuy -= 9;
+                    break;
+                default:
+                    chanceToBuy += 0;
+                    break;
+
             }
         }
+        public void
     }
 }
