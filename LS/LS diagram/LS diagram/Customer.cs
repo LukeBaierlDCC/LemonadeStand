@@ -7,7 +7,7 @@ namespace LS_diagram
 {
     public class CustomerType
     {
-        public void Customer
+        public void Customer()
         {
             public void Decide(Weather weather, Player player)
             {
@@ -49,9 +49,26 @@ namespace LS_diagram
             }
             public void WeatherFactor(Weather weather, Player player)
             {
-                if (weather.realTemp < && weather.skyType == "cloudy" || weather.skyType == "rainy")
+            if (weather.realTemp < && weather.skyType == "cloudy" || weather.skyType == "rainy")
                 {
-                Random rnd = new Random();
+                    Random rnd = new Random();
+                    int chance = rnd.Next(1, 100);
+                    if (chance > 50)
+                    {
+                        Purchase(player);
+                    }
+                }
+            }
+            public void RecipeFactor(Player player)
+            {
+                if (2 > player.Recipe.numLemon || player.Recipe.numLemon > 8 || player.Recipe.cupsOfSugar < 2)
+                {
+                    Random rnd = new Random();
+                    int chance = rnd.Next(1, 100);
+                    if (chance > 50)
+                    {
+                        Purchase(player);
+                    }
                 }
             }
         }
