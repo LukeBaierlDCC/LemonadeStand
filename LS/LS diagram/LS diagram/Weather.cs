@@ -7,52 +7,44 @@ namespace LS_diagram
 {
     public class Weather
     {
-        private double Forecast;
-        public int realTemp;
-        public int degrees;
-        public int GetActualWeather;
-        int type;
-        public string skyType;
-        List<string> sky = new List<string>(new string[] { "sunny", "cloudy", "partly-cloudy", "rainy" });
-        Random num = new Random();
+        public int predictedForecast;
+        public int getActualWeather;
+        public string currentTemperature;
 
-        public int Temperature()
+        public Weather()
         {
-            degrees = num.Next(50, 100);
-            return degrees;
+            GetTemperature();
+            GetWeatherCondition();
+            GetActualTemperature();
         }
 
-        public string WeatherType()
+        public void GetTemperature()
         {
-            type = num.Next(0, 3);
-            skyType = sky[type];
-            return skyType;
+            Random rnd = new Random();
+            forecastTemperature = rnd.Next(60, 95);
         }
-        private double GetForecast()
+        public void GetWeatherCondition()
         {
-            int predictTemp = Temperature();
-            string predictType = WeatherType();
-            string forecast = "Today's forecast is: " + predictType + " and " + predictTemp + " degrees\n";
-            Console.WriteLine(forecast);
-            string realWeather = GetActualWeather();
-            return realWeather;
-        }
-
-        public string GetActualWeather(Random random)
-        {
-            string realWeather;
-            int difference = num.Next(-5, 5);
-            realTemp = degrees + difference;
-            if (realTemp % degrees == 5)
+            Random rnd = new Random();
+            int numberCondition = rnd.Next(0, 4);
+            switch(numberCondition)
             {
-                WeatherType();
-                realWeather = "Today's actual weather is: " + skyType + " and " + realTemp + " degrees\n";
+                case 0:
+                    weatherCondition = "sunny";
+                    break;
+                case 1:
+                    weatherCondition = "cloudy";
+                    break;
+                case 2:
+                    weatherCondition = "rainy";
+                    break;
             }
-            else
-            {
-                realWeather = "Today's actual weather is: " + skyType + " and " + realTemp + " degrees\n";
-            }
-            return realWeather;
+        }
+
+        public void GetActualTemperature()
+        {
+            Random rnd = new Random();
+            GetActualTemperature = rnd.Next(forecastTemperature - 5, forecastTemperature + 5);
         }
     }
 }

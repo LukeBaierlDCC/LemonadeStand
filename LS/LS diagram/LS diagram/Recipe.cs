@@ -12,14 +12,6 @@ namespace LS_diagram
         private int Lemons;
         private int Sugar;
 
-        public Inventory Inventory
-        {
-            get => default(Inventory);
-            set
-            {
-            }
-        }
-
         public void SetRecipe()
         {
             throw new System.NotImplementedException();

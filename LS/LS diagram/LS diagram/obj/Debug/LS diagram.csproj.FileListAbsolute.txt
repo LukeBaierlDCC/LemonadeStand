@@ -1,0 +1,2 @@
+C:\Users\Booger Face\Desktop\DCC CSharp\LemonadeStand\LS\LS diagram\LS diagram\obj\Debug\LS diagram.csprojAssemblyReference.cache
+C:\Users\Booger Face\Desktop\DCC CSharp\LemonadeStand\LS\LS diagram\LS diagram\obj\Debug\LS diagram.csproj.CoreCompileInputs.cache

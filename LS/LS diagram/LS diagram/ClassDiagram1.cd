@@ -1,45 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="LS_diagram.Program">
-    <Position X="5.25" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Program.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Game" />
-    </ShowAsAssociation>
-  </Class>
   <Class Name="LS_diagram.Weather">
     <Position X="0.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAAAAAAAAAAAAAAABAAAAAgAAAAAAAAAACAAAAAAAA=</HashCode>
+      <HashCode>AAAAAGAAAAAABAQAAAAAAAAAAIYBAAAAAAQAABAEAAA=</HashCode>
       <FileName>Weather.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="CustomerType" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="LS_diagram.CustomerType">
     <Position X="2.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Customer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LS_diagram.Game">
     <Position X="5.25" Y="1.5" Width="1.5" />
-    <AssociationLine Name="Player" Type="LS_diagram.Player">
+    <AssociationLine Name="player" Type="LS_diagram.Player">
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.079" Y="0.039" />
+        <Position X="0.039" Y="0.079" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <HashCode>AAAgAAIAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Player" />
+      <Field Name="player" />
     </ShowAsAssociation>
   </Class>
   <Class Name="LS_diagram.Inventory">
@@ -49,49 +36,26 @@
       <FileName>Inventory.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="LS_diagram.Player">
-    <Position X="5.75" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Player.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="wallet" />
-    </ShowAsAssociation>
-  </Class>
-  <Class Name="LS_diagram.Store">
-    <Position X="9.75" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Store.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="LS_diagram.Day">
     <Position X="1.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
       <FileName>Day.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Weather" />
+      <Property Name="CustomerType" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="LS_diagram.UserInterface">
-    <Position X="11.25" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>UserInterface.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="LS_diagram.CustomerOne">
-    <Position X="1.5" Y="7" Width="1.5" />
+    <Position X="2.25" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>CustomerOne.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LS_diagram.CustomerTwo">
-    <Position X="3.25" Y="7" Width="1.5" />
+    <Position X="4" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
       <FileName>CustomerTwo.cs</FileName>
@@ -100,28 +64,41 @@
   <Class Name="LS_diagram.Wallet">
     <Position X="4.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Wallet.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Recipe" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="LS_diagram.Recipe">
     <Position X="5.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAACAAAAIFAAAAIAAAAAAAAAAAAIAAAAAAAAgAAUAA=</HashCode>
+      <HashCode>AAQACAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUAA=</HashCode>
       <FileName>Recipe.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Inventory" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="LS_diagram.Rules">
     <Position X="12.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Rules.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LS_diagram.Player">
+    <Position X="7.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAACAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Player.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Recipe" />
+      <Property Name="Wallet" />
+      <Property Name="Inventory" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LS_diagram.StoreClass">
+    <Position X="10.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>StoreClass.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

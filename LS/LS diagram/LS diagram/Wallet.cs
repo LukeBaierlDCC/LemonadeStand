@@ -7,12 +7,5 @@ namespace LS_diagram
 {
     public class Wallet
     {
-        public Recipe Recipe
-        {
-            get => default(Recipe);
-            set
-            {
-            }
-        }
     }
 }
