@@ -49,6 +49,18 @@ namespace LS_diagram
 
             }
         }
-        public void
+        public void PriceInfluence(double price)
+        {
+            if (price>=.25)
+            {
+                double overPrice = (price - .25);
+                chanceToBuy -= (overPrice * 100);
+            }
+            else
+            {
+                double underPrice = (.25 - price) * 2;
+                chanceToBuy += (underPrice * 100);
+            }
+        }
     }
 }
