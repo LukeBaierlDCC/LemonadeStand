@@ -47,6 +47,10 @@ namespace LS_diagram
                     amount = 50;
                     totalcost = 1.40;
                     break;
+                default:
+                    Console.WriteLine("Wrong input, dummy!");
+                    SelectionOfLemons(player);
+                    break;
             }
 
             lemonsToBuy = amount;
@@ -81,6 +85,10 @@ namespace LS_diagram
                     amount = 300;
                     totalcost = 1.10;
                     break;
+                default:
+                    Console.WriteLine("Wrong input, dude!");
+                    SelectionOfIce(player);
+                    break;
             }
             iceToBuy = amount;
             double newTotal = player.money - totalcost;
@@ -114,6 +122,10 @@ namespace LS_diagram
                     amount = 12;
                     totalcost = 1.05;
                     break;
+                default:
+                    Console.WriteLine("Wrong input, dummy!");
+                    SelectionOfSugar(player);
+                    break;
             }
 
             sugarToBuy = amount;
@@ -146,6 +158,10 @@ namespace LS_diagram
                 case 3:
                     amount = 120;
                     totalcost = 2.80;
+                    break;
+                default:
+                    Console.WriteLine("Wrong input, dummy! Thank goodness you didn't type flamingo...");
+                    SelectionOfCups(player);
                     break;
             }
 

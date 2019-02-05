@@ -26,11 +26,11 @@ namespace LS_diagram
             recipe.SetRecipe();
             GetPossibleCustomers();
             cupCounter = inventory.cups;
-            RunThroughCustomers(inventory, lemonadeStand, store, num);
-            UpdateEndOfDayVariables(lemonadeStand);
-            UpdatePopularity(lemonadeStand);
-            UpdateCustomerSatisfaction(lemonadeStand);
-            DisplayDayResults(weather.GetActualTemperature, weather.weatherCondition, lemonadeStand, currentDay);
+            RunThroughCustomers(inventory, recipe, store, num);
+            UpdateEndOfDayVariables(recipe);
+            UpdatePopularity(recipe);
+            UpdateCustomerSatisfaction(recipe);
+            DisplayDayResults(weather.GetActualTemperature, weather.weatherCondition, recipe, currentDay);
         }
         public Weather Weather
         {

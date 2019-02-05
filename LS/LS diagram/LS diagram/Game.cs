@@ -13,25 +13,30 @@ namespace LS_diagram
 
         public StoreClass store;
 
-        public Rules rules;
+        Rules rules;
 
         public int currentDay;
 
         public double daysPlaying;
 
+        public Recipe recipe;
+
         public Game()
         {
+            recipe = new Recipe();
             Random num = new Random();
 
             DisplayRules();
 
             Console.Clear();
 
-            lemonadeStandOne = new LemonadeStand();
+            //lemonadeStandOne = new LemonadeStand();
 
             Days = new List<Day>();
 
-            player = new Player();
+            Console.WriteLine("What is your name?");
+
+            player = new Player(Console.ReadLine());
 
             store = new StoreClass();
 
@@ -39,9 +44,11 @@ namespace LS_diagram
 
             currentDay = 1;
 
-            RunGameDays(lemonadeStandOne.inventory, lemonadeStandOne, store, Day, num);
+            Days[0].RunDay(player.Inventory, recipe, store, num);
 
-            DisplayEndGame(lemonadeStandOne);
+            //RunGameDays(lemonadeStandOne.inventory, lemonadeStandOne, store, Day, num);
+
+            //DisplayEndGame(lemonadeStandOne);
         }
 
         private void DisplayRules()
@@ -58,16 +65,17 @@ namespace LS_diagram
                     break;
 
             }
+        }
         
         public void GenerateDays(int numberOfDays)
         {
             for (int i = 0; i < numberOfDays; i++)
             {
                 Day day = new Day();
-                Days.Add(day);
                 day.payingCustomers = 0;
-                day.RunDay(inventory, lemonadeStand, store, day, currentDay, num);
-                this.currentDay += 1;
+                Days.Add(day);
+                day.RunDay(player.Inventory, store, day, currentDay, num);
+                //this.currentDay += 1;
             }
         }
         public void DisplayWeather()
@@ -76,9 +84,9 @@ namespace LS_diagram
            
         }
 
-        public void DisplayEndGame(LemonadeStand lemonadeStand)
+        public void DisplayEndGame()
         {
-            Console.WriteLine("Moving on to day " + daysPlaying + " and you made $" + lemonadeStand.money +".");
+            Console.WriteLine("Moving on to day " + daysPlaying + " and you made $" + player.money +".");
         }
    
     }
