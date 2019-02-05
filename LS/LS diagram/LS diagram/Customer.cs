@@ -13,8 +13,8 @@ namespace LS_diagram
             chanceToBuy = 10;
             ActualTemperatureInfluence(actualTemperature);
             WeatherConditionInfluence(weatherCondition);
-            PriceInfluence(player.Recipe.price);
-            RecipeInfluence(lemonadeStand);
+            PriceInfluence(day.recipe.price);
+            RecipeInfluence(recipe);
             DoesBuy(day, num);
         }
 
@@ -62,7 +62,7 @@ namespace LS_diagram
                 chanceToBuy += (underPrice * 100);
             }
         }
-        public void RecipeInfluence(LemonadeStand lemonadeStand)
+        public void RecipeInfluence()
         {
             chanceToBuy += LemonInfluence(lemonadeStand.Recipe.lemonsToUse);
             chanceToBuy += SugarInfluence(lemonadeStand.Recipe.sugarToUse);

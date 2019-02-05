@@ -59,6 +59,14 @@ namespace LS_diagram
                 customersForDay[i].DoesBuy();
             }
         }
+        public void Recipe()
+        {
+            for (int i = 0; i < possibleCustomers; i++)
+            {
+                CustomerType customer = new CustomerType();
+                customersForDay.Add(customer);
+            }
+        }
         public void UpdatePopularity()
         {
             popularity += Math.Round((payingCustomers / 10));
