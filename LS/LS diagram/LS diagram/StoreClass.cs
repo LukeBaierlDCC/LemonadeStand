@@ -95,6 +95,9 @@ namespace LS_diagram
 
             double totalcost = 0;
             Console.WriteLine("How many spoons of sugar would you like to buy? ");
+            Console.WriteLine("Type 4 if you want to buy 4 cups of sugar for .25.");
+            Console.WriteLine("Type 9 if you want to buy 9 cups of sugar for .60.");
+            Console.WriteLine("Type 12 if you want to buy 12 cups of sugar for 1.05.");
             int userinput = Int32.Parse(Console.ReadLine());
 
             switch (userinput)
@@ -105,11 +108,11 @@ namespace LS_diagram
                     break;
                 case 2:
                     amount = 9;
-                    totalcost = .40;
+                    totalcost = .60;
                     break;
                 case 3:
-                    amount = 12;
-                    totalcost = .90;
+                    amount = 13;
+                    totalcost = 1.05;
                     break;
             }
 
@@ -125,6 +128,9 @@ namespace LS_diagram
 
             double totalcost = 0;
             Console.WriteLine("How many cups are you planning to buy? ");
+            Console.WriteLine("Type 30 to buy 30 cups for .75.");
+            Console.WriteLine("Type 60 to buy 60 cups for 1.45.");
+            Console.WriteLine("Type 120 to buy 120 cups for 2.80.");
             int userinput = Int32.Parse(Console.ReadLine());
 
             switch (userinput)
