@@ -35,24 +35,24 @@ namespace LS_diagram
 
             switch (userInput)
             {
-                case 1:
+                case 10:
                     amount = 10;
                     totalcost = .60;
                     break;
-                case 2:
+                case 30:
                     amount = 30;
                     totalcost = 1.10;
                     break;
-                case 3:
+                case 50:
                     amount = 50;
                     totalcost = 1.40;
                     break;
             }
 
             lemonsToBuy = amount;
-            double newTotal = player.cash - totalcost;
-            player.cash = newTotal;
-            Console.WriteLine("There's a total of " + player.cash + " left in your budget.");
+            double newTotal = player.money - totalcost;
+            player.money = newTotal;
+            Console.WriteLine("There's a total of " + player.money + " left in your budget.");
 
         }
          
@@ -69,23 +69,23 @@ namespace LS_diagram
 
             switch (userinput)
             {
-                case 1:
+                case 100:
                     amount = 100;
                     totalcost = .40;
                     break;
-                case 2:
+                case 200:
                     amount = 200;
                     totalcost = .75;
                     break;
-                case 3:
+                case 300:
                     amount = 300;
                     totalcost = 1.10;
                     break;
             }
             iceToBuy = amount;
-            double newTotal = player.cash - totalcost;
-            player.cash = newTotal;
-            Console.WriteLine("There's a total of " + player.cash + " left in your budget.");
+            double newTotal = player.money - totalcost;
+            player.money = newTotal;
+            Console.WriteLine("There's a total of " + player.money + " left in your budget.");
 
         }
 
@@ -102,24 +102,24 @@ namespace LS_diagram
 
             switch (userinput)
             {
-                case 1:
+                case 4:
                     amount = 4;
                     totalcost = .25;
                     break;
-                case 2:
+                case 9:
                     amount = 9;
                     totalcost = .60;
                     break;
-                case 3:
-                    amount = 13;
+                case 12:
+                    amount = 12;
                     totalcost = 1.05;
                     break;
             }
 
             sugarToBuy = amount;
-            double newTotal = player.cash - totalcost;
-            player.cash = newTotal;
-            Console.WriteLine("There's a total of " + player.cash + " left in your budget.");
+            double newTotal = player.money - totalcost;
+            player.money = newTotal;
+            Console.WriteLine("There's a total of " + player.money + " left in your budget.");
         }
 
         public void SelectionOfCups(Player player)
@@ -150,9 +150,13 @@ namespace LS_diagram
             }
 
             cups = amount;
-            double newTotal = player.cash - totalcost;
-            player.cash = newTotal;
-            Console.WriteLine("There's a total of " + player.cash + " left in your budget.");
+            double newTotal = player.money - totalcost;
+            player.money = newTotal;
+            Console.WriteLine("There's a total of " + player.money + " left in your budget.");
+        }
+        public void DisplayStore()
+        {
+
         }
     }
 }

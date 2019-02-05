@@ -7,7 +7,9 @@ namespace LS_diagram
 {
     public class Player
     {
-        public Player Player
+        string name;
+        public double money;
+        public Player(string Name)
         {
             name = Name;
             money = 10.00;
@@ -22,7 +24,7 @@ namespace LS_diagram
 
         public Wallet Wallet
         {
-            get => default(Wallet);
+            //get => default(Wallet);
             set
             {
             }

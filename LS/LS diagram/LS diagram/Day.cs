@@ -11,21 +11,22 @@ namespace LS_diagram
         public double payingCustomers;
         public Weather weather;
         public CustomerType customers;
+        public List<CustomerType> customersForDay;
         public double cupCounter;
         public int pitcher;
 
         public Day()
         {
+            customersForDay = new List<CustomerType>();
             weather = new Weather();
         }
-        public void RunDay(Inventory inventory, LemonadeStand lemonadeStand, StoreClass store, Day day, int currentDay, Random num, double currentDay)
-        {
-            weather = new Weather();
-            store.DisplayStore(inventory, lemonadeStand, weather, currentDay);
-            lemonadeStand.SetRecipe();
+        public void RunDay(Inventory inventory, Recipe recipe, StoreClass store, Random num)
+        { 
+            store.DisplayStore();
+            recipe.SetRecipe();
             GetPossibleCustomers();
-            this.cupCounter = inventory.cups;
-            RunThroughCustomers(inventory, lemonadeStand, store, day, num);
+            cupCounter = inventory.cups;
+            RunThroughCustomers(inventory, lemonadeStand, store, num);
             UpdateEndOfDayVariables(lemonadeStand);
             UpdatePopularity(lemonadeStand);
             UpdateCustomerSatisfaction(lemonadeStand);
@@ -43,9 +44,24 @@ namespace LS_diagram
             Random rnd = new Random();
             possibleCustomers = rnd.Next(85, 120);
         }
-        public void UpdatePopularity(LemonadeStand lemonadeStand)
+        public void GenerateCustomers()
         {
-            lemonadeStand.popularity += Math.Round((payingCustomers / 10));
+            for (int i = 0; i < possibleCustomers; i++)
+            {
+                CustomerType customer = new CustomerType();
+                customersForDay.Add(customer);
+            }
+        }
+        public void BuyLemonade()
+        {
+            for (int i = 0; i < customersForDay.Count; i++)
+            {
+                customersForDay[i].DoesBuy();
+            }
+        }
+        public void UpdatePopularity()
+        {
+            popularity += Math.Round((payingCustomers / 10));
         }
         public void UpdateCustomerSatisfaction(LemonadeStand lemonadeStand)
         {
@@ -97,18 +113,18 @@ namespace LS_diagram
             lemonadeStand.Inventory.Ice = 0;
             lemonadeStand.Revenue += (payingCustomers * lemonadeStand.Recipe.Price);
         }
-        public void RunThroughCustomers(Inventory inventory, LemonadeStand lemonadeStand, StoreClass store, Day day, Random num)
+        public void RunThroughCustomers(Inventory inventory,Recipe recipe, Day day, Random num)
         {
             for (double j = 0; j < possibleCustomers; j++)
             {
                 if (j == 0 || pitcher == 10 || pitcher == 20 || pitcher == 30 || pitcher == 40 || pitcher == 50 || pitcher == 60 || pitcher == 70 || pitcher == 80 || pitcher == 90 || pitcher == 100)
                 {
-                    UpdateInventory(lemonadeStand);
+                    UpdateInventory();
                     pitcher++;
                 }
-                if (cupCounter > 0 && inventory.lemons > lemonadeStand.Recipe.lemonsToUse && inventory.sugar > lemonadeStand.Recipe.sugarToUse && inventory.ice > lemonadeStand.Recipe.iceToUse)
+                if (cupCounter > 0 && inventory.lemons > recipe.lemonsToUse && inventory.sugar > recipe.sugarToUse && inventory.ice > recipe.iceToUse)
                 {
-                    Customers = new Customers(weather.GetActualTemperature, weather.weatherCondition, lemonadeStand, day, num);
+                    Customers = new Customers(weather.GetActualTemperature, weather.weatherCondition, day, num);
                 }
                 else
                 {
