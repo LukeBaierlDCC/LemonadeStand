@@ -18,7 +18,7 @@ namespace LS_diagram
         {
             weather = new Weather();
         }
-        public void RunDay(Inventory inventory, LemonadeStand lemonadeStand, StoreClass store, Day day, int currentDay, Random num)
+        public void RunDay(Inventory inventory, LemonadeStand lemonadeStand, StoreClass store, Day day, int currentDay, Random num, double currentDay)
         {
             weather = new Weather();
             store.DisplayStore(inventory, lemonadeStand, weather, currentDay);

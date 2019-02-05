@@ -15,6 +15,10 @@ namespace LS_diagram
 
         public Rules rules;
 
+        public int currentDay;
+
+        public double daysPlaying;
+
         public Game()
         {
             Days = new List<Day>();
