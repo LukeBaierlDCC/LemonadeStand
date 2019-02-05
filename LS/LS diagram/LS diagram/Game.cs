@@ -7,7 +7,7 @@ namespace LS_diagram
 {
     public class Game
     {
-        public Day day;
+        public List<Day> Days;
 
         public Player player;
 
@@ -17,13 +17,26 @@ namespace LS_diagram
 
         public Game()
         {
-            day = new Day();
+            Days = new List<Day>();
 
             player = new Player();
 
             store = new StoreClass();
 
             rules = new Rules();
+        }
+        public void GenerateDays(int numberOfDays)
+        {
+            for (int i = 0; i < numberOfDays; i++)
+            {
+                Day day = new Day();
+                Days.Add(day);
+            }
+        }
+        public void DisplayWeather()
+        {
+            Console.WriteLine(Days[0].Weather.currentTemperature);
+           
         }
    
     }

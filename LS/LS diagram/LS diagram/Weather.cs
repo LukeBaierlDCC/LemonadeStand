@@ -9,6 +9,8 @@ namespace LS_diagram
     {
         public int predictedForecast;
         public int getActualWeather;
+        public string weatherCondition;
+        public int forecastTemperature;
         public string currentTemperature;
 
         public Weather()
@@ -44,7 +46,7 @@ namespace LS_diagram
         public void GetActualTemperature()
         {
             Random rnd = new Random();
-            GetActualTemperature = rnd.Next(forecastTemperature - 5, forecastTemperature + 5);
+            getActualWeather = rnd.Next(forecastTemperature - 5, forecastTemperature + 5);
         }
     }
 }
