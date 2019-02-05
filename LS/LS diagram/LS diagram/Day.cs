@@ -38,7 +38,26 @@ namespace LS_diagram
             {
             }
         }
-
+        public void GetPossibleCustomers()
+        {
+            Random rnd = new Random();
+            possibleCustomers = rnd.Next(85, 120);
+        }
+        public void UpdatePopularity(LemonadeStand lemonadeStand)
+        {
+            lemonadeStand.popularity += Math.Round((payingCustomers / 10));
+        }
+        public void UpdateCustomerSatisfaction(LemonadeStand lemonadeStand)
+        {
+            if ((lemonadeStand.customerSatisfaction + Math.Round((payingCustomers / 6)))<100)
+            {
+                lemonadeStand.customerSatisfaction += Math.Round((payingCustomers / 6));
+            }
+            else
+            {
+                lemonadeStand.customerSatisfaction = 100;
+            }
+        }
         public CustomerType CustomerType
         {
             get => default(CustomerType);
@@ -46,5 +65,11 @@ namespace LS_diagram
             {
             }
         }
+        public void UpdateInventory(LemonadeStand lemonadeStand)
+        {
+            lemonadeStand.inventory.lemons -= lemonadeStand.Recipe.lemonsToUse;
+            lemonadeStand.inventory.sugar -= lemonadeStand.Recipe.sugarToUse;
+        }
+        
     }
 }
