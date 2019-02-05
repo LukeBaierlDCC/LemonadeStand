@@ -108,7 +108,11 @@ namespace LS_diagram
                 }
                 if (cupCounter > 0 && inventory.lemons > lemonadeStand.Recipe.lemonsToUse && inventory.sugar > lemonadeStand.Recipe.sugarToUse && inventory.ice > lemonadeStand.Recipe.iceToUse)
                 {
-
+                    Customers = new Customers(weather.GetActualTemperature, weather.weatherCondition, lemonadeStand, day, num);
+                }
+                else
+                {
+                    return;
                 }
             }
         }
