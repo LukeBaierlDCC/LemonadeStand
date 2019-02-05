@@ -18,6 +18,19 @@ namespace LS_diagram
         {
             weather = new Weather();
         }
+        public void RunDay(Inventory inventory, LemonadeStand lemonadeStand, StoreClass store, Day day, int currentDay, Random num)
+        {
+            weather = new Weather();
+            store.DisplayStore(inventory, lemonadeStand, weather, currentDay);
+            lemonadeStand.SetRecipe();
+            GetPossibleCustomers();
+            this.cupCounter = inventory.cups;
+            RunThroughCustomers(inventory, lemonadeStand, store, day, num);
+            UpdateEndOfDayVariables(lemonadeStand);
+            UpdatePopularity(lemonadeStand);
+            UpdateCustomerSatisfaction(lemonadeStand);
+            DisplayDayResults(weather.GetActualTemperature, weather.weatherCondition, lemonadeStand, currentDay);
+        }
         public Weather Weather
         {
             get => default(Weather);
