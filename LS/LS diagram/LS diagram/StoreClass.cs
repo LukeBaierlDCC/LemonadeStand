@@ -28,6 +28,9 @@ namespace LS_diagram
 
             double totalcost = 0;
             Console.WriteLine("How many lemons would you like to purchase? ");
+            Console.WriteLine("Type 10 if you want to buy 10 lemons for .60.");
+            Console.WriteLine("Type 30 if you want to buy 30 lemons for 1.10.");
+            Console.WriteLine("Type 50 if you want to buy 50 lemons for 1.40.");
             userInput = Int32.Parse(Console.ReadLine());
 
             switch (userInput)
@@ -59,6 +62,9 @@ namespace LS_diagram
 
             double totalcost = 0;
             Console.WriteLine("How many icecubes are you looking to buy? ");
+            Console.WriteLine("Type 100 if you want to buy 100 icecubes for .40.");
+            Console.WriteLine("Type 200 if you want to buy 200 icecubes for .75.");
+            Console.WriteLine("Type 300 if you want to buy 300 icecubes for 1.10.");
             int userinput = Int32.Parse(Console.ReadLine());
 
             switch (userinput)
