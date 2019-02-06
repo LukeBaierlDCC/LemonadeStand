@@ -64,9 +64,9 @@ namespace LS_diagram
         }
         public void RecipeInfluence()
         {
-            chanceToBuy += LemonInfluence(lemonadeStand.Recipe.lemonsToUse);
-            chanceToBuy += SugarInfluence(lemonadeStand.Recipe.sugarToUse);
-            chanceToBuy += IceInfluence(lemonadeStand.Recipe.iceToUse);
+            chanceToBuy += LemonInfluence(recipe.Recipe.lemonsToUse);
+            chanceToBuy += SugarInfluence(recipe.Recipe.sugarToUse);
+            chanceToBuy += IceInfluence(recipe.Recipe.iceToUse);
         }
         public double LemonInfluence(double lemons)
         {

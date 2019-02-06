@@ -10,6 +10,7 @@ namespace LS_diagram
         public double possibleCustomers;
         public double payingCustomers;
         public Weather weather;
+        public Recipe recipe;
         public CustomerType customers;
         public List<CustomerType> customersForDay;
         public double cupCounter;
@@ -23,7 +24,7 @@ namespace LS_diagram
         public void RunDay(Inventory inventory, Recipe recipe, StoreClass store, Random num)
         { 
             store.DisplayStore();
-            recipe.SetRecipe();
+            recipe.Recipe();
             GetPossibleCustomers();
             cupCounter = inventory.cups;
             RunThroughCustomers(inventory, recipe, store, num);
@@ -59,27 +60,27 @@ namespace LS_diagram
                 customersForDay[i].DoesBuy();
             }
         }
-        public void Recipe()
-        {
-            for (int i = 0; i < possibleCustomers; i++)
-            {
-                CustomerType customer = new CustomerType();
-                customersForDay.Add(customer);
-            }
-        }
+        //public void recipe.Recipe()
+        //{
+        //    for (int i = 0; i < possibleCustomers; i++)
+        //    {
+        //        CustomerType customer = new CustomerType();
+        //        customersForDay.Add(customer);
+        //    }
+        //}
         public void UpdatePopularity()
         {
             popularity += Math.Round((payingCustomers / 10));
         }
-        public void UpdateCustomerSatisfaction(LemonadeStand lemonadeStand)
+        public void UpdateCustomerSatisfaction(Recipe recipe)
         {
-            if ((lemonadeStand.customerSatisfaction + Math.Round((payingCustomers / 6)))<100)
+            if ((recipe.customerSatisfaction + Math.Round((payingCustomers / 6)))<100)
             {
-                lemonadeStand.customerSatisfaction += Math.Round((payingCustomers / 6));
+                recipe.customerSatisfaction += Math.Round((payingCustomers / 6));
             }
             else
             {
-                lemonadeStand.customerSatisfaction = 100;
+                recipe.customerSatisfaction = 100;
             }
         }
         public CustomerType CustomerType
@@ -89,18 +90,18 @@ namespace LS_diagram
             {
             }
         }
-        public void UpdateInventory(LemonadeStand lemonadeStand)
+        public void UpdateInventory(Recipe recipe)
         {
-            lemonadeStand.inventory.lemons -= lemonadeStand.Recipe.lemonsToUse;
-            lemonadeStand.inventory.sugar -= lemonadeStand.Recipe.sugarToUse;
+            recipe.Inventory.lemons -= recipe.Recipe.lemonsToUse;
+            recipe.Inventory.sugar -= recipe.Recipe.sugarToUse;
         }
-        public void DisplayDayResults(double actualTemperature, string weatherCondition, LemonadeStand lemonadeStand)
+        public void DisplayDayResults(double actualTemperature, string weatherCondition, Recipe recipe)
         {
             Console.WriteLine("Today's actual weather was " + actualTemperature + " and " + weatherCondition + ".");
             Console.WriteLine("");
             Console.WriteLine("You sold " + payingCustomers + " cups of lemonade to " + possibleCustomers + " customers.");
             Console.WriteLine("");
-            Console.WriteLine("Your popularity has risen to " + lemonadeStand.popularity + " and your customer satisfaction is at " + lemonadeStand.customerSatisfaction + "%.");
+            Console.WriteLine("Your popularity has risen to " + recipe.Popularity + " and your customer satisfaction is at " + recipe.customerSatisfaction + "%.");
             Console.WriteLine("Press enter so we can get back to selling.");
             Console.WriteLine("");
             Console.WriteLine("A new day of selling lemonade.");
@@ -111,17 +112,17 @@ namespace LS_diagram
             }
             else
             {
-                DisplayDayResults(actualTemperature, weatherCondition, lemonadeStand, currentDay);
+                DisplayDayResults(actualTemperature, weatherCondition, recipe, currentDay);
             }
         }
-        public void UpdateEndOfDayVariables(LemonadeStand lemonadeStand)
+        public void UpdateEndOfDayVariables(Recipe recipe)
         {
-            lemonadeStand.Inventory.Cups = cupCounter;
-            lemonadeStand.Money += payingCustomers * lemonadeStand.Recipe.Price;
-            lemonadeStand.Inventory.Ice = 0;
-            lemonadeStand.Revenue += (payingCustomers * lemonadeStand.Recipe.Price);
+            recipe.Inventory.Cups = cupCounter;
+            recipe.Money += payingCustomers * recipe.Recipe.Price;
+            recipe.Inventory.Ice = 0;
+            recipe.Revenue += (payingCustomers * recipe.Recipe.Price);
         }
-        public void RunThroughCustomers(Inventory inventory,Recipe recipe, Day day, Random num)
+        public void RunThroughCustomers(Inventory inventory, Recipe recipe, Day day, Random num)
         {
             for (double j = 0; j < possibleCustomers; j++)
             {

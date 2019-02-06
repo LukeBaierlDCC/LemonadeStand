@@ -19,11 +19,12 @@ namespace LS_diagram
         //public void SetRecipe()
         //{
         //    throw new System.NotImplementedException();
-        //}
+        //}         
 
         public Recipe()
         {
-
+            
         }
+
     }
 }

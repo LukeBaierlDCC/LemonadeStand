@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="LS_diagram.Weather">
-    <Position X="0.5" Y="4.75" Width="1.5" />
+    <Position X="0.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAQAAAAAAAAAAAAAAAAAAAFAIAQAABAAAAABAA=</HashCode>
       <FileName>Weather.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LS_diagram.CustomerType">
-    <Position X="2.25" Y="4.75" Width="1.5" />
+    <Position X="2.25" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEAgAAACASAAAAACAAAAAgAACAAAAAAAAAEAABAAAA=</HashCode>
       <FileName>Customer.cs</FileName>
@@ -22,7 +22,7 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAgAIAAAAAAAAAAAAAAAAAAAAAAQABQAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAgAIAAAAAQIAAAAAAABAAAAAAAQABQIAEAAAAAAA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -39,7 +39,7 @@
   <Class Name="LS_diagram.Day">
     <Position X="1.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAAAIABAQAAAAAAAAAAAAABABAAAAAQAAAAAQAAAAA=</HashCode>
+      <HashCode>AgAAAIABAQQQQEAAAAUAABABADAAAAAQBAACAQQAIAA=</HashCode>
       <FileName>Day.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -48,14 +48,14 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="LS_diagram.CustomerOne">
-    <Position X="1.25" Y="8.25" Width="1.5" />
+    <Position X="4" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>CustomerOne.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LS_diagram.CustomerTwo">
-    <Position X="3.25" Y="8.25" Width="1.5" />
+    <Position X="5.75" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
       <FileName>CustomerTwo.cs</FileName>
@@ -75,17 +75,10 @@
       <FileName>Recipe.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="LS_diagram.Rules">
-    <Position X="14.75" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Rules.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="LS_diagram.Player">
     <Position X="10" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAACAAAAAAAAAAAgAAAAA=</HashCode>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAACAEAAAAAAAAAgAAEAA=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -95,10 +88,24 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="LS_diagram.StoreClass">
-    <Position X="12.5" Y="1.75" Width="1.5" />
+    <Position X="13.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAAAAAIAAAAAAAAAAAAGAAAAAABAAAgAAAAAg=</HashCode>
+      <HashCode>ABAAgAAAAAAAIAAAAAAAAAAAAGAAAAAABAAAgAAAAAg=</HashCode>
       <FileName>StoreClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LS_diagram.UserInterface">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserInterface.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LS_diagram.Rules">
+    <Position X="15.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rules.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
