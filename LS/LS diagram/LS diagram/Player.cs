@@ -9,10 +9,14 @@ namespace LS_diagram
     {
         string name;
         public double money;
-        public Player(string Name)
+        public Wallet wallet;
+
+        //constructor
+        public Player()
         {
-            name = Name;
-            money = 10.00;
+
+            wallet = new Wallet();
+            
         }
         public Recipe Recipe
         {

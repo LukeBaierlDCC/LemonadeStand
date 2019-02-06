@@ -17,8 +17,14 @@ namespace LS_diagram
         public double sugarToUse = 4;
         public double iceToUse = 4;
         public double price = 0.25;
-        internal object Inventory;
+        internal Inventory inventory;
         internal int Money;
+
+        public Recipe()
+        {
+            //inventory = new Inventory.Inventory()
+            return;
+        }
 
         public void SetRecipe()
         {
@@ -30,9 +36,10 @@ namespace LS_diagram
             iceToUse = double.Parse(Console.ReadLine());
         }
 
-        public Recipe()
+        public Inventory
         {
-            
+            //recipe = new Recipe();
+            return;
         }
 
     }

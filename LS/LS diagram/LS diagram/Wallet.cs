@@ -7,7 +7,7 @@ namespace LS_diagram
 {
     public class Wallet
     {
-        public double moneyInWallet = 10.0;
+        public double money = 10.00;
         bool bankrupt;
         double completeTransaction;
         double CostOfProduct;

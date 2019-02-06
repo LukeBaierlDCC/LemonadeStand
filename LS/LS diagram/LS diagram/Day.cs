@@ -11,27 +11,38 @@ namespace LS_diagram
         public double payingCustomers;
         public Weather weather;
         public Recipe recipe;
+        public Player player;
         public CustomerType customers;
         public List <CustomerType> customersForDay;
         public double cupCounter;
+        public double temperature;
         public int pitcher;
 
         public Day()
         {
+            player = new Player();
             customersForDay = new List<CustomerType>();
             weather = new Weather();
         }
-        public void RunDay(Inventory inventory, Recipe recipe, StoreClass store, Random num)
+        public void RunDay(Inventory inventory, Recipe recipe, StoreClass store)
         { 
             store.DisplayStore();
-            recipe.Recipe();
+            recipe.SetRecipe();
             GetPossibleCustomers();
             cupCounter = inventory.cups;
-            RunThroughCustomers(inventory, recipe, store, num);
+            RunThroughCustomers(inventory, recipe);
             UpdateEndOfDayVariables(recipe);
             UpdatePopularity(recipe);
             UpdateCustomerSatisfaction(recipe);
-            DisplayDayResults(weather.GetActualTemperature, weather.weatherCondition, recipe, currentDay);
+            DisplayDayResults(weather.GetActualTemperature, weather.weatherCondition, recipe);
+        }
+        private class Temperature temperature()
+        {
+            
+        }
+        private void RunThroughCustomers(Inventory inventory, Recipe recipe)
+        {
+            throw new NotImplementedException();
         }
         public Weather Weather
         {
@@ -70,7 +81,7 @@ namespace LS_diagram
             }
         }
 
-        public void UpdatePopularity()
+        public void UpdatePopularity(Recipe recipe)
         {
             recipe.customerPopularity += Math.Round((payingCustomers / 10));
         }
@@ -94,8 +105,8 @@ namespace LS_diagram
         }
         public void UpdateInventory(Recipe recipe)
         {
-            recipe.Inventory.lemons -= recipe.Recipe.lemonsToUse;
-            recipe.Inventory.sugar -= recipe.Recipe.sugarToUse;
+            recipe.inventory.lemons -= recipe.lemonsToUse;
+            recipe.inventory.sugar -= recipe.sugarToUse;
         }
         public void DisplayDayResults(double actualTemperature, string weatherCondition, Recipe recipe)
         {
@@ -103,7 +114,7 @@ namespace LS_diagram
             Console.WriteLine("");
             Console.WriteLine("You sold " + payingCustomers + " cups of lemonade to " + possibleCustomers + " customers.");
             Console.WriteLine("");
-            Console.WriteLine("Your popularity has risen to " + recipe.Popularity + " and your customer satisfaction is at " + recipe.customerSatisfaction + "%.");
+            Console.WriteLine("Your popularity has risen to " + recipe.popularity + " and your customer satisfaction is at " + recipe.customerSatisfaction + "%.");
             Console.WriteLine("Press enter so we can get back to selling.");
             Console.WriteLine("");
             Console.WriteLine("A new day of selling lemonade.");
@@ -114,17 +125,17 @@ namespace LS_diagram
             }
             else
             {
-                DisplayDayResults(actualTemperature, weatherCondition, recipe, currentDay);
+                DisplayDayResults(actualTemperature, weatherCondition, recipe);
             }
         }
         public void UpdateEndOfDayVariables(Recipe recipe)
         {
-            recipe.Inventory.Cups = cupCounter;
-            recipe.Money += payingCustomers * recipe.Recipe.Price;
-            recipe.Inventory.Ice = 0;
-            recipe.Revenue += (payingCustomers * recipe.Recipe.Price);
+            recipe.inventory.cups = cupCounter;
+            player.wallet.money += payingCustomers * recipe.price;
+            recipe.inventory.ice = 0;
+            recipe.revenue += (payingCustomers * recipe.price);
         }
-        public void RunThroughCustomers(Inventory inventory, Recipe recipe, Day day, Random num)
+        public void RunThroughCustomers(Inventory inventory, Recipe recipe, Random num)
         {
             for (double j = 0; j < possibleCustomers; j++)
             {
@@ -135,7 +146,7 @@ namespace LS_diagram
                 }
                 if (cupCounter > 0 && inventory.lemons > recipe.lemonsToUse && inventory.sugar > recipe.sugarToUse && inventory.ice > recipe.iceToUse)
                 {
-                    Customers = new Customers(weather.GetActualTemperature, weather.weatherCondition, day, num);
+                    Customers = new Customers(weather.GetActualTemperature, weather.weatherCondition);
                 }
                 else
                 {

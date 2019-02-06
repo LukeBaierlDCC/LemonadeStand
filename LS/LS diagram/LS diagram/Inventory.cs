@@ -11,10 +11,17 @@ namespace LS_diagram
         public double lemons;
         public double sugar;
         public double ice;
+        public double recipe;
 
         public Inventory()
         {
 
+        }
+
+        public Recipe()
+        {
+            //
+            return;
         }
     }
 }

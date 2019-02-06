@@ -74,7 +74,7 @@ namespace LS_diagram
                 Day day = new Day();
                 day.payingCustomers = 0;
                 Days.Add(day);
-                day.RunDay(player.Inventory, store, day, currentDay, num);
+                day.RunDay(player.Inventory, recipe, store, day, currentDay, 5);
                 //this.currentDay += 1;
             }
         }
