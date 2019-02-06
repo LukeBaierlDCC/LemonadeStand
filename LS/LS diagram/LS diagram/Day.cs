@@ -12,7 +12,7 @@ namespace LS_diagram
         public Weather weather;
         public Recipe recipe;
         public CustomerType customers;
-        public List<CustomerType> customersForDay;
+        public List <CustomerType> customersForDay;
         public double cupCounter;
         public int pitcher;
 
@@ -60,17 +60,19 @@ namespace LS_diagram
                 customersForDay[i].DoesBuy();
             }
         }
-        //public void recipe.Recipe()
-        //{
-        //    for (int i = 0; i < possibleCustomers; i++)
-        //    {
-        //        CustomerType customer = new CustomerType();
-        //        customersForDay.Add(customer);
-        //    }
-        //}
+
+        public void customerSatisfaction()
+        {
+            for (int i = 0; i < possibleCustomers; i++)
+            {
+                CustomerType customer = new CustomerType();
+                customersForDay.Add(customer);
+            }
+        }
+
         public void UpdatePopularity()
         {
-            popularity += Math.Round((payingCustomers / 10));
+            recipe.customerPopularity += Math.Round((payingCustomers / 10));
         }
         public void UpdateCustomerSatisfaction(Recipe recipe)
         {
